@@ -11,5 +11,8 @@ module.exports = {
       preProcessor: 'sass',
       patterns: []
     }
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/spring-financial-frontend-assignment/'
+    : '/'
 };
