@@ -1,5 +1,5 @@
-import { shallowMount } from '@vue/test-utils'
-import Loading from '@/components/Loading.vue'
+import { shallowMount } from '@vue/test-utils';
+import Loading from '@/components/Loading.vue';
 
 describe('Loading.vue', () => {
   it('renders loading', () => {

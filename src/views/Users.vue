@@ -1,13 +1,13 @@
 <template>
   <div class="about">
-    <h1>Users</h1>
-    <div>
-      <input type="search" v-model="search" />
-      <select v-model="order">
-        <option value="name">Name</option>
-        <option value="username">Username</option>
-        <option value="email">Email</option>
-      </select>
+    <div class="header">
+      <h2>Users</h2>
+      <Filter
+        :searchProp="search"
+        @updateSearch="updateSearch"
+        :orderProp="order"
+        @updateOrder="updateOrder"
+      />
     </div>
     <UserList :users="filteredUsers" :loaded="loaded" />
   </div>
@@ -15,11 +15,13 @@
 
 <script>
 import { getUsers } from '@/api';
+import Filter from '@/components/Filter';
 import UserList from '@/components/UserList';
 
 export default {
   name: 'Users',
   components: {
+    Filter,
     UserList,
   },
   data: () => ({
@@ -52,6 +54,32 @@ export default {
       if (a[this.order] > b[this.order]) return 1;
       return 0;
     },
+    updateSearch(search) {
+      this.search = search;
+    },
+    updateOrder(order) {
+      this.order = order;
+    },
   },
 };
 </script>
+
+<style lang="scss" scoped>
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: baseline;
+  text-align: left;
+
+  h1, h2 {
+    color: #424242;
+  }
+
+  @media screen and (min-width: 480px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+</style>

@@ -3,15 +3,19 @@ import Users from '../views/Users.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/users',
     name: 'Users',
     component: Users
   },
   {
-    path: '/user/:id',
+    path: '/users/:id',
     name: 'User',
     component: () => import('@/views/User')
   },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: { name: 'Users' }
+  }
 ];
 
 const router = createRouter({
