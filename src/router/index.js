@@ -1,14 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { publicPath } from '../../vue.config';
 import Users from '../views/Users.vue';
 
 const routes = [
   {
-    path: '/users',
+    path: `${publicPath}users`,
     name: 'Users',
     component: Users
   },
   {
-    path: '/users/:id',
+    path: `${publicPath}users/:id`,
     name: 'User',
     component: () => import('@/views/User')
   },
@@ -19,6 +20,7 @@ const routes = [
 ];
 
 const router = createRouter({
+  base: publicPath,
   history: createWebHistory(),
   routes
 });

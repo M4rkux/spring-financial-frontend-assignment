@@ -1,7 +1,7 @@
 <template>
   <nav>
     <h2 class="breadcrumb">
-      <router-link to="/users">Users</router-link>
+      <router-link :to="`${publicPath}users`">Users</router-link>
       >
       {{ user.name }}
     </h2>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { publicPath } from '../../vue.config';
 import { getUser, postsByUser } from '@/api';
 import UserDetail from '@/components/UserDetail';
 import UserPosts from '@/components/UserPosts';
@@ -26,6 +27,7 @@ export default {
     UserPosts,
   },
   data: () => ({
+    publicPath,
     user: {},
     userLoaded: false,
     posts: [],

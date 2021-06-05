@@ -10,9 +10,10 @@ yarn build
 cd dist
 
 git init
+git checkout -b gh-pages
 git add -A
 git commit -m 'deploy'
-
-git push -f git@github.com:m4rkux/spring-financial-frontend-assignment.git main:gh-pages
+git remote add origin git@github.com:m4rkux/spring-financial-frontend-assignment.git
+git push origin gh-pages -f
 
 cd -

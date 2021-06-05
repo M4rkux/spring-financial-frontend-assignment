@@ -1,5 +1,7 @@
 # frontend-assignment
 
+You can see a live version on: https://m4rkux.github.io/spring-financial-frontend-assignment/
+
 ## Project setup
 ```
 yarn install

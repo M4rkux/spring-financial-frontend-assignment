@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { publicPath } from '../../vue.config';
 import Loading from '@/components/Loading';
 import router from '@/router';
 
@@ -42,7 +43,7 @@ export default {
   methods: {
     navigate(id, event) {
       if (!event || event.target.tagName.toLowerCase() !== 'a') {
-        router.push(`/users/${id}`);
+        router.push(`${publicPath}users/${id}`);
       }
     },
   },

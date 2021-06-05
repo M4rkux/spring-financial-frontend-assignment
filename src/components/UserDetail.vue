@@ -86,8 +86,9 @@ export default {
       border: 1px solid $border-color;
       padding: 5px 15px;
       margin-right: 10px;
-      width: 240px;
       margin-bottom: 15px;
+      min-width: 240px;
+      width: 25%;
 
       &:last-child {
         margin-right: 0;
