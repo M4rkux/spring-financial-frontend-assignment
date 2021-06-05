@@ -14,7 +14,7 @@ const mockUsers = [
     "username": "Antonette",
     "email": "Shanna@melissa.tv",
   }
-]
+];
 
 describe('UserList.vue', () => {
   it('renders list without users', () => {

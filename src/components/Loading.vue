@@ -1,7 +1,7 @@
 <template>
   <div>
     <slot v-if="loaded"></slot>
-    <div v-else>
+    <div v-else class="loading">
       Loading...
     </div>
   </div>
@@ -15,3 +15,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.loading {
+  font-size: 1.25rem;
+}
+</style>

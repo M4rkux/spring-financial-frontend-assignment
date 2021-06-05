@@ -1,16 +1,15 @@
 <template>
-  <h2>
-    <div id="nav">
+  <nav>
+    <h2 class="breadcrumb">
       <router-link to="/users">Users</router-link>
       >
       {{ user.name }}
-    </div>
-  </h2>
-  <div class="about">
-    <h1>Users Detail</h1>
-    <div>
+    </h2>
+  </nav>
+  <div>
+    <div class="content">
       <UserDetail :user="user" :loaded="userLoaded" />
-      <UserPosts :posts="posts" :loaded="postsLoaded" />
+      <UserPosts :posts="posts" :userName="user.name" :loaded="postsLoaded" />
     </div>
   </div>
 </template>
@@ -33,10 +32,28 @@ export default {
     postsLoaded: false,
   }),
   async mounted() {
-    this.user = await getUser(this.$route.params.id);
-    this.userLoaded = true;
-    this.posts = await postsByUser(this.$route.params.id);
-    this.postsLoaded = true;
+    getUser(this.$route.params.id).then((response) => {
+      this.user = response;
+      this.userLoaded = true;
+    });
+    postsByUser(this.$route.params.id).then((response) => {
+      this.posts = response;
+      this.postsLoaded = true;
+    });
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.content {
+  padding: 0 15px;
+}
+nav {
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.breadcrumb {
+  text-align: left;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div>
     <div class="header">
       <h2>Users</h2>
       <Filter
@@ -72,14 +72,12 @@ export default {
   flex-direction: column;
   align-items: baseline;
   text-align: left;
+  padding: 0 15px;
 
-  h1, h2 {
-    color: #424242;
-  }
-
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 500px) {
     flex-direction: row;
     align-items: center;
+    padding: 0;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">
@@ -8,23 +8,28 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $default-text-color;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 500px) {
     margin: 30px;
   }
 }
 
-#nav {
-  padding: 30px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $title-text-color;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+a {
+  color: $link-color;
+  text-decoration: unset;
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 </style>

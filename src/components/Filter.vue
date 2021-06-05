@@ -49,7 +49,7 @@ export default {
     width: 100%;
 
     label {
-      color: #717171;
+      color: $label-color;
       font-weight: bold;
     }
 
@@ -58,11 +58,11 @@ export default {
       width: 100%;
       font-size: 1rem;
       padding: 2px 4px;
-      color: #717171;
+      color: $label-color;
     }
   }
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 500px) {
     width: auto;
     display: flex;
     flex-direction: row;

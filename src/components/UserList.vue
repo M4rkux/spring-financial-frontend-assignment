@@ -54,34 +54,33 @@ ul {
   list-style: none;
   padding: 0;
   li {
-    background-color: #fafafa;
+    background-color: $li-background-odd;
     min-height: 90px;
-    border-top: 1px solid #dcdcdc;
+    border-top: 1px solid $border-color;
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: #494949;
     text-decoration: unset;
-    padding: 0 20px;
+    padding: 0 15px;
 
     &:last-child {
-      border-bottom: 1px solid #dcdcdc;
+      border-bottom: 1px solid $border-color;
     }
 
     &:nth-child(even) {
-      background-color: #ffffff;
+      background-color: $li-background-even;
     }
 
     &:hover {
       cursor: pointer;
-      background-color: #ebebeb;
+      background-color: $li-background-hover;
     }
 
     .avatar {
       height: 46px;
       width: 46px;
       min-width: 46px;
-      background-color: #d4d4d4;
+      background-color: $avatar-background;
       border-radius: 50%;
       display: block;
       margin-right: 20px;
@@ -99,27 +98,18 @@ ul {
         display: flex;
         flex-direction: column;
       }
-
-      a,
-      a:active {
-        color: #18a7e3;
-        text-decoration: unset;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-
+      
       a,
       span {
         line-height: 1.25;
       }
     }
 
-    @media screen and (min-width: 480px) {
-      border-left: 1px solid #dcdcdc;
-      border-right: 1px solid #dcdcdc;
-
+    @media screen and (min-width: 500px) {
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      padding: 0 15px;
+      
       .content {
         flex-direction: row;
         align-items: center;
@@ -130,7 +120,7 @@ ul {
 
 .no-results {
   margin-top: 30px;
-  color: #494949;
+  color: $default-text-color;
   font-size: 1.25em;
 }
 </style>
